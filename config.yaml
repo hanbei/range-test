@@ -1,0 +1,19 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+    #this requires the alpn-boot library on the JVM's boot classpath
+    #- type: h2
+    #  port: 8445
+    #  keyStorePath: example.keystore
+    #  keyStorePassword: example
+  adminConnectors:
+    - type: http
+      port: 8081
+
+# Logging settings.
+logging:
+  level: INFO
+
+  appenders:
+    - type: console
