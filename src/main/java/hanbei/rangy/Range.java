@@ -82,15 +82,15 @@ public final class Range {
             if (upper().isPresent()) {
                 upper = this.upper;
             } else {
-                upper = length - 1;
+                upper = length;
             }
         } else {
             if (upper().isPresent()) {
-                upper = length - 1;
+                upper = length;
                 lower = length - this.upper;
             } else {
                 lower = 0;
-                upper = length - 1;
+                upper = length;
             }
         }
         return Range.of(lower, upper);
@@ -117,5 +117,9 @@ public final class Range {
     @Override
     public String toString() {
         return "(" + lower + "-" + upper + ')';
+    }
+
+    public long length() {
+        return upper - lower + 1;
     }
 }
